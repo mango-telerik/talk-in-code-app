@@ -1,0 +1,27 @@
+<a href="#/posts/add" class="add-new-thread btn btn-primary" id="add-new-thread">Add new post</a>
+<h3>// forum posts</h3>
+
+<ul id="all-posts-sortable">
+    {{#each info}}
+    <li>
+        <div class="panel panel-default">
+            <header class="panel-heading">
+                <h2 class="panel-title">{{title}}</h2>
+            </header>
+            <div class="panel-body">
+                <main class="posts-content">
+                    <h4>Author: {{author.username}}</h4>
+                    <article>{{content}}</article>
+                </main>
+                <footer class="posts-footer">
+                    <ul class="nav nav-pills" role="tablist">
+                        <li role="presentation" class="add-like-container active"><button class="add-like btn btn-primary">Like <span class="badge">{{likes}}</span></button></li>
+                        {{!--<li role="presentation" class="comments-count">Comments <span class="badge">{{this.comments}}</span></li>--}}
+                        <li role="presentation" class="category-info"><span class="btn btn-warning">{{category}}</span></li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+    </li> 
+    {{/each}}
+</ul>
