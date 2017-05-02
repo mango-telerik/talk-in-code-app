@@ -1,0 +1,22 @@
+.posts-content {
+    margin: 0 0 20px 0;
+}
+
+.posts-content>article {
+    text-indent: 30px;
+}
+
+.posts-footer {
+    position: relative;
+}
+
+.posts-footer .comments-count {
+    position: absolute;
+    margin-top: 5px;
+    right: 120px;
+}
+
+.posts-footer .category-info {
+    position: absolute;
+    right: 0;
+}
