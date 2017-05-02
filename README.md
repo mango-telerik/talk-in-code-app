@@ -19,14 +19,13 @@ And much more cool introduction text here...
 #### **installation steps**
 
 - check if you have [nodejs](https://nodejs.org/en/) installed - `node -v`
-- then you need some package managers
+- then you need **bower** and **http-server** (for local start)
     - [bower](https://bower.io/) - `npm install bower -g`
-    - [jspm](http://jspm.io/) - `npm install jspm -g`
+    - [http-server](https://www.npmjs.com/package/http-server) - `npm install http-server -g`
 - download the source from **[the app repo](https://github.com/mango-telerik/talk-in-code)** or clone it
 - open the root folder in the console / terminal / cmd
 - install **node modules** - `npm install`
 - install **bower components** - `bower install`
-- install **jspm packages** - `jspm install`
 - run server - `npm start`
 - open app in browser - `http://localhost:3000/#`
 - to stop server press `Ctrl + C` in the console
@@ -35,14 +34,13 @@ And much more cool introduction text here...
 
 - server and server side
     - users - YES
-    - themes - NO
-    - posts - NO
-    - other - NO
+    - themes - YES
+    - posts - YES
+    - other - YES
 - user logic
     - login - YES
     - register - YES
     - logout - YES
-    - delete - NO
 - themes logic
     - categories - NO
     - create - NO
