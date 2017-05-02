@@ -1,0 +1,30 @@
+{
+  "name": "talk-in-code-app",
+  "description": "forum for developers educational app",
+  "main": "main.js",
+  "authors": [
+    "team Mango"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "forum",
+    "developers"
+  ],
+  "homepage": "https://github.com/mango-telerik/talk-in-code-app",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1",
+    "toastr": "^2.1.3",
+    "sammy": "^0.7.6",
+    "handlebars": "^4.0.7",
+    "crypto-js": "^3.1.9",
+    "bootstrap": "^3.3.7"
+  }
+}
