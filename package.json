@@ -1,0 +1,28 @@
+{
+    "name": "talk-in-code-app",
+    "version": "1.0.0",
+    "description": "forum for developers educational app",
+    "main": "main.js",
+    "scripts": {
+        "test": "test",
+        "start": "http-server -p 3000"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mango-telerik/talk-in-code-app.git"
+    },
+    "keywords": [
+        "forum",
+        "developers"
+    ],
+    "author": "team Mango",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mango-telerik/talk-in-code-app/issues"
+    },
+    "homepage": "https://github.com/mango-telerik/talk-in-code-app#readme",
+    "dependencies": {
+        "systemjs": "^0.20.12",
+        "systemjs-plugin-babel": "0.0.21"
+    }
+}
