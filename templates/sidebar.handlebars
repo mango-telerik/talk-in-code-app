@@ -1,0 +1,12 @@
+<ul class="nav sidebar-nav">
+    <li class="sidebar-categories">
+        <a href="#">
+            Categories
+        </a>
+    </li>
+    {{#each categories}}
+    <li>
+        <a href="#/home/:{{name}}">{{name}}</a>
+    </li>
+    {{/each}}
+</ul>
