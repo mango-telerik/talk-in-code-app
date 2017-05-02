@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./bower_components/jquery-ui/themes/base/all.css">
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bower_components/toastr/toastr.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/posts.css">
+    <script src="js/sidebar-javascript.js" type="text/javascript"></script>
+    <script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=6ab5v9vrn0ox7oz8zwgdlo18wlbxwj76pvwott8ywmnlwdve'></script>
+
+    <title>talk.in.code</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="overlay"></div>
+        <!--    Sidebar    -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-categories">
+                    <a href="#">
+                    Categories
+                </a>
+                </li>
+                <li>
+                    <a href="#">Javascript</a>
+                </li>
+                <li>
+                    <a href="#">PHP</a>
+                </li>
+                <li>
+                    <a href="#">C+/C++</a>
+                </li>
+                <li>
+                    <a href="#">Javascript</a>
+                </li>
+                <li>
+                    <a href="#">HTML</a>
+                </li>
+                <li>
+                    <a href="#">CSS</a>
+                </li>
+                <!--<li>
+                <a href="#">C#</a>
+            </li>
+            <li>
+                <a href="#">Phyton</a>
+            </li>
+            <li>
+                <a href="#">Bootstrap</a>
+            </li>
+            <li>
+                <a href="#">Angular</a>
+            </li>
+            <li>
+                <a href="#">jQuery</a>
+            </li>
+            <li>
+                <a href="#">AJAX</a>
+            </li>
+            <li>
+                <a href="#">SQL</a>
+            </li>-->
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!--  page content     -->
+        <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+        <span class="hamb-top"></span>
+        <span class="hamb-middle"></span>
+        <span class="hamb-bottom"></span>
+    </button>
+
+        <header class="header-info">
+            <a href="#/home" id="forum-title">
+                <h1>> talk.in.code</h1>
+            </a>
+            <p>//The best place for developers</p>
+            <p id="login-info"></p>
+            <button id="login-button" class="btn btn-success btn-sm">
+            <span class="glyphicon glyphicon-menu-hamburger" ></span>
+            login
+        </button>
+            <button id="logout-button" class="btn btn-success btn-sm">
+            <span class="glyphicon glyphicon-menu-hamburger" ></span>
+            logout
+        </button>
+        </header>
+        <!-- login-panel  -->
+
+        <div id="content">
+            <div class="container-fluid">
+                <main id="main-content"></main>
+            </div>
+            <div class="container-fluid">
+                <aside id="aside"></aside>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">Telerik Academy - JS Applications - Teamwork</p>
+            </div>
+        </footer>
+
+        <!-- /# page content -->
+
+        <!--<script src="./bower_components/jquery/dist/jquery.min.js"></script>-->
+        <script src="./bower_components/sammy/lib/sammy.js"></script>
+        <script src="./bower_components/toastr/toastr.min.js"></script>
+        <script src="./bower_components/jquery-ui/jquery-ui.min.js"></script>
+        <script src="./bower_components/handlebars/handlebars.min.js"></script>
+        <script src="./bower_components/crypto-js/crypto-js.js"></script>
+        <script src="./node_modules/systemjs/dist/system.js"></script>
+        <script src="./js/system-config.js"></script>
+        <script>
+            System.import("main");
+        </script>
+    </div>
+</body>
+
+</html>
