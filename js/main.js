@@ -23,7 +23,7 @@ import * as data from "data";
     };
 
     // start router
-    sammyApp.run('#/');
+    sammyApp.run('https://rawgit.com/mango-telerik/talk-in-code-app/master/index.html#/');
 
     // click login -> goes to login page
     $("body").on("click", "#login-button", () => {
