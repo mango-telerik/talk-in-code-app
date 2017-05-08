@@ -120,14 +120,14 @@ let loader = {
                             });
                         })
                         .then(() => {
-                            context.redirect("#/home");
+                            context.redirect("https://rawgit.com/mango-telerik/talk-in-code-app/master/index.html#/home");
                         })
                         .catch(err => {
                             if (typeof err === "object") {
                                 err = err.responseText;
                             }
                             toastr.error(err, "Error!");
-                            context.redirect("#/login");
+                            context.redirect("https://rawgit.com/mango-telerik/talk-in-code-app/master/index.html#/login");
                         });
                 });
             });
@@ -158,7 +158,7 @@ let loader = {
                                 err = err.responseText;
                             }
                             toastr.error(err, "Error!");
-                            context.redirect("#/login");
+                            context.redirect("https://rawgit.com/mango-telerik/talk-in-code-app/master/index.html#/login");
                         });
                 });
             });
