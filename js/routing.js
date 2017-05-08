@@ -127,6 +127,7 @@ let loader = {
                                 err = err.responseText;
                             }
                             toastr.error(err, "Error!");
+                            context.redirect("#/login");
                         });
                 });
             });
@@ -157,6 +158,7 @@ let loader = {
                                 err = err.responseText;
                             }
                             toastr.error(err, "Error!");
+                            context.redirect("#/login");
                         });
                 });
             });
