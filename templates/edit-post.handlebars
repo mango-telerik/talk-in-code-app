@@ -1,0 +1,36 @@
+<script src="./tinymce/tinymce.min.js"></script>
+<div class="edit-post-block">
+    <h3 class="main-heading">> edit post</h3>
+    <form id="post-form" class="form-group" method="post">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Author: <strong><a href="#/home/all/{{author.username}}">{{author.username}}</a></strong></h4>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <strong>Post title: </strong>
+                    <input type="text" class="form-control" value="{{title}}" id="tb-thread-title" />
+                </div>
+                <div class="form-group">
+                    <strong>Select category: </strong >
+                    <select class="btn btn-default dropdown-toggle" id="tb-thread-category">
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="HTML">HTML</option>
+                        <option value="JAVA">JAVA</option>
+                        <option value="PHP">PHP</option>
+                        <option value="jQuery">jQuery</option>
+                        <option value="SQL">SQL</option>
+                        <option value="AJAX">AJAX</option>
+                    </select>
+                    <span class="btn btn-warning" style="float:right"><a href="#/home/{{category}}">{{category}}</a></span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="form-group">
+        <textarea name='content' class="form-control" id="post-content-field">{{content}}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="button" id="edit-post-request-button" class="btn btn-primary btn-lg">Publish</button>
+    </div>
+</div>

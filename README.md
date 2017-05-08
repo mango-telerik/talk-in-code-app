@@ -1,4 +1,6 @@
-![<h1 style="font-size:30px; font-family:consolas; color:lightgrey; background-color:#24292e; padding:15px"> > talk.in.code </h1>](https://github.com/zachdimitrov/talk-in-code/blob/master/public/images/tic-header.PNG) 
+
+![<h1 style="font-size:30px; font-family:consolas; color:lightgrey; background-color:#24292e; padding:15px"> > talk.in.code </h1>](https://github.com/mango-telerik/talk-in-code/blob/master/images/tic-header.PNG) 
+
 <img src="https://avatars2.githubusercontent.com/u/27736291?v=3&s=200" width="9%" style="float:right">
 
 Team **Mango**  
@@ -24,8 +26,7 @@ And much more cool introduction text here...
     - [http-server](https://www.npmjs.com/package/http-server) - `npm install http-server -g`
 - download the source from **[the app repo](https://github.com/mango-telerik/talk-in-code)** or clone it
 - open the root folder in the console / terminal / cmd
-- install **node modules** - `npm install`
-- install **bower components** - `bower install`
+- install **node modules** and **bower components** - `npm install`, bower will install automatically
 - run server - `npm start`
 - open app in browser - `http://localhost:3000/#`
 - to stop server press `Ctrl + C` in the console
@@ -34,13 +35,14 @@ And much more cool introduction text here...
 
 - server and server side
     - users - YES
-    - themes - YES
-    - posts - YES
-    - other - YES
+    - themes - NO
+    - posts - NO
+    - other - NO
 - user logic
     - login - YES
     - register - YES
     - logout - YES
+    - delete - NO
 - themes logic
     - categories - NO
     - create - NO

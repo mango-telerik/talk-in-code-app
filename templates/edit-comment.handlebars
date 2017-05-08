@@ -1,0 +1,31 @@
+<script src="./tinymce/tinymce.min.js"></script>
+<div class="edit-post-block">
+    <h3 class="main-heading">> edit your comment</h3>
+    <form id="post-form" class="form-inline" method="post">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Author: <strong><a href="#/home/all/{{author.username}}">{{author.username}}</a></strong></h4>
+            </div>
+            <div class="panel-body">
+                <div>
+                    <strong>Label: </strong>
+                    <select class="btn btn-default dropdown-toggle" id="tb-comment-label">
+                        <option class="bg-faded" value="default">default</option>
+                        <option class="bg-primary" value="primary">primary</option>
+                        <option class="bg-success" value="success">success</option>
+                        <option class="bg-warning" value="warning">warning</option>
+                        <option class="bg-danger" value="danger">danger</option>
+                        <option class="bg-info" value="info">info</option>
+                    </select>
+                    <span class="btn btn-info" style="float:right"><a href="#/posts/{{postid}}">Back to post</a></span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="form-group">
+        <textarea name='content' class="form-control" id="post-content-field">{{content}}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="button" id="edit-comment-request-button" class="btn btn-primary btn-lg">Edit your comment</button>
+    </div>
+</div>

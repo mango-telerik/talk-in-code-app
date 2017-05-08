@@ -19,10 +19,19 @@ export default class Post extends Element {
     }
 
     set title(val) {
-        console.log(val);
-        const wrong = validator.validateString(val, TITLE_MIN_LENGTH, TITLE_MAX_LENGTH, TITLE_CHARS);
-        if (wrong) {
-            this.addError(wrong.message);
+        let message = null;
+        if (typeof val !== "string" || val.length < 3) {
+            message = "Title must be text with more than 3 symbols!";
+        } else {
+            val
+                .replace(/&/g, "&amp;")
+                .replace(/>/g, "&gt;")
+                .replace(/</g, "&lt;")
+                .replace(/"/g, "&quot;");
+        }
+
+        if (message) {
+            this.addError(message);
         } else {
             this._title = val;
         }
@@ -39,12 +48,6 @@ export default class Post extends Element {
 
     // creates and adds errors to the errors property
     addError(message) {
-        if (!this.errors) {
-            this.errors = [];
-        }
-
-        this.errors.push(message);
-        console.log(this.errors);
-        return this;
+        super.addError(message);
     }
 }

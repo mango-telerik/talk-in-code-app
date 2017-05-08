@@ -1,47 +1,36 @@
-
-<div class="new-post-block">
-    <h2 id="editor-title">New post</h2>
-    <form id="post-form" method="post">
-        <ul class="title-author">
-            <li class="single-element-form">
-                <h1 class="title-form">{{title}}</h1>
-                <div class="justified">
-                    <input type="text" value="" placeholder="Title" id="tb-thread-title"/></div>
-            </li>
-            <li class="single-element-form">
-                <h1 class="title-form">{{author}}</h1>
-
-                <br/> <div class="justified">created by{{author}}</div>
-                <div class="justified">
-                <textarea name = 'content' class="content-field" placeholder="Content" id="post-content-field"></textarea>
+<script src="./tinymce/tinymce.min.js"></script>
+<div class="edit-post-block">
+    <h3 class="main-heading">> create new post</h3>
+    <form id="post-form" class="form-group" method="post">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Author: <strong><a href="#/home/all/{{user}}">{{user}}</a></strong></h4>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <strong>Post title: </strong>
+                    <input type="text" class="form-control" placeholder="My awesome post!" id="tb-thread-title" />
                 </div>
-            </li>
-        </ul>
-
-        <br>
-        <div class="justified">
-            <button type="button" id="create-new-post-request-button">Publish</button></div>
+                <div class="form-group">
+                    <strong>Select category: </strong >
+                    <select class="btn btn-default dropdown-toggle" id="tb-thread-category">
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="HTML">HTML</option>
+                        <option value="JAVA">JAVA</option>
+                        <option value="PHP">PHP</option>
+                        <option value="jQuery">jQuery</option>
+                        <option value="SQL">SQL</option>
+                        <option value="AJAX">AJAX</option>
+                    </select>
+                    <span class="btn btn-info" style="float:right"><a href="#/home">Back to all posts</a></span>
+                </div>
+            </div>
+        </div>
     </form>
+    <div class="form-group">
+        <textarea name='content' class="form-control" id="post-content-field">{{content}}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="button" id="create-new-post-request-button" class="btn btn-primary btn-lg">Publish</button>
+    </div>
 </div>
-<script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=6ab5v9vrn0ox7oz8zwgdlo18wlbxwj76pvwott8ywmnlwdve'></script>
-<script>
-tinymce.init({
-selector: '#post-content-field',
-    theme: "modern",
-    width: 1000,
-    height: 200,
-    plugins: [
-        "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-        "save contextmenu directionality emoticons template paste textcolor"
-    ],
-    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
-    style_formats: [
-        {title: 'Bold text', inline: 'b'},
-        {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
-        {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
-        {title: 'Example 1', inline: 'span', classes: 'example1'},
-        {title: 'Example 2', inline: 'span', classes: 'example2'}
-    ]
-});
-</script>

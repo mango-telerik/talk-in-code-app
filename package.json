@@ -4,7 +4,8 @@
     "description": "forum for developers educational app",
     "main": "main.js",
     "scripts": {
-        "test": "test",
+        "test": "start chrome http://127.0.0.1:8080/tests/tests.html && http-server",
+        "postinstall": "bower install",
         "start": "http-server -p 3000"
     },
     "repository": {
@@ -22,6 +23,7 @@
     },
     "homepage": "https://github.com/mango-telerik/talk-in-code-app#readme",
     "dependencies": {
+        "bower": "^1.5.2",
         "systemjs": "^0.20.12",
         "systemjs-plugin-babel": "0.0.21"
     }

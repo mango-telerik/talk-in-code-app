@@ -17,6 +17,10 @@ const KINVEY = {
         "Authorization": "Basic " + AUTH_STRING,
         "X-Kinvey-API-Version": "3"
     },
+    USERS_HEADER_DELETE: {
+        "Authorization": "Basic " + AUTH_MASTER,
+        "X-Kinvey-API-Version": "2"
+    },
     POSTS_HEADER: {
         "Authorization": "Basic " + AUTH_GUEST,
         "X-Kinvey-API-Version": "3"

@@ -14,7 +14,7 @@ System.config({
         //"crypto": "../bower_components/crypto-js/crypto-js.js",
 
         // local modules
-        "main": "./js/routing.js",
+        "main": "./js/main.js",
         "validator": "./js/helpers/validator.js",
         "constants": "./js/helpers/constants.js",
         "data": "./js/data.js",
@@ -26,6 +26,8 @@ System.config({
         "categoryModel": "./js/models/category.js",
         "postModel": "./js/models/post.js",
         "commentModel": "./js/models/comment.js",
-        "kinvey": "./js/helpers/kinvey.js"
+        "kinvey": "./js/helpers/kinvey.js",
+        "router": "./js/routing.js",
+        "tinymce-init": "./js/helpers/tinymceInit.js"
     }
 });

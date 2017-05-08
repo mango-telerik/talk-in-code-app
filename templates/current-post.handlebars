@@ -1,0 +1,100 @@
+<a href="#/posts/{{_id}}/comment" class="add-new-comment btn btn-primary">Add comment</a>
+<h3 class="main-heading">> {{title}}</h3>
+<a href="#/home" class="home-from-single-post btn btn-info hidden-xs">Home</a>
+<a href="#/posts/{{_id}}/edit" class="edit-post btn btn-primary" id="edit-post-{{author.username}}">Edit</a>
+<button type="button" class="delete-post btn btn-danger" id="delete-post-{{author.username}}" data-toggle="modal" data-target="#myPostsModal">Delete</button>
+
+<!-- Modal for deleting posts -->
+<div id="myPostsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete post</h4>
+            </div>
+            <div class="modal-body">
+                <strong>The whole post with all comments in it will be deleted! Are you sure?</strong>
+            </div>
+            <div class="modal-footer">
+                <a href="#/posts/{{_id}}/delete" class="btn btn-danger" id="delete-post-final">Delete</a>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="single-post" class="panel panel-default">
+    <header class="panel-heading">
+        <h2 class="panel-title">Author: <strong><a href="#/home/all/{{author.username}}">{{author.username}}</a></strong></h2>
+        <h4 class="createdate hidden-xs">Created on: {{_kmd.ect}}</h4>
+    </header>
+    <div class="panel-body">
+        <main class="posts-content">
+            <article>{{{content}}}</article>
+        </main>
+    </div>
+    <div class="panel-footer">
+        <footer class="posts-footer">
+            <ul class="nav nav-pills" role="tablist">
+                <li role="presentation" class="add-like-container active"><button class="add-post-like btn btn-primary" id="{{_id}}">Like <span class="badge">{{likes}}</span></button></li>
+                <li role="presentation" class="comments-count hidden-xs">Comments <span class="badge">{{comments.length}}</span></li>
+                <li role="presentation" class="category-info"><span class="btn btn-warning"><a href="#/home/{{category}}">{{category}}</a></span></li>
+            </ul>
+        </footer>
+    </div>
+</div>
+
+{{#if comments}}
+<h3>[ answers ]</h3>
+<ul id="comments">
+    {{#each comments}}
+    <!-- Modal for deleting comments -->
+    <div id="myCommentsModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header bg-danger">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete post</h4>
+                </div>
+                <div class="modal-body">
+                    <strong>The selected comment will be deleted! Are you sure?</strong>
+                </div>
+                <div class="modal-footer">
+                    <a href="#/comments/{{postid}}/{{_id}}/delete" class="btn btn-danger" id="delete-post-final">Delete</a>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <li>
+        <div class="panel panel-{{label}} comments-panel">
+            <header class="panel-heading">
+                <h4 class="createdate hidden-xs">Created: {{_kmd.ect}}</h4>
+                <h2 class="panel-title">Author: <strong><a href="#/home/all/{{author.username}}">{{author.username}}</a></strong></h2>
+
+                <a href="#/comments/{{_id}}/edit" class="edit-comment btn btn-info btn-xs edit-comment-{{author.username}}">Edit</a>
+                <button type="button" class="delete-comment btn btn-danger btn-xs delete-comment-{{author.username}}" data-toggle="modal"
+                    data-target="#myCommentsModal">Delete</button>
+            </header>
+            <div class="panel-body">
+                <main class="posts-content">
+                    <article>{{{content}}}</article>
+                </main>
+            </div>
+            <div class="panel-footer">
+                <footer class="posts-footer">
+                    <ul class="nav nav-pills" role="tablist">
+                        <li role="presentation" class="add-like-container active"><button class="add-comment-like btn btn-primary" id="{{_id}}">Like <span class="badge">{{likes}}</span></button></li>
+                        <li role="presentation" class="comments-count hidden-xs"><span class="badge">{{label}}</span></li>
+                        <li role="presentation" class="category-info"><span class="btn btn-warning"><a href="#/home/{{../category}}">{{../category}}</a></span></li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</ul>
+{{/if}}

@@ -20,3 +20,69 @@
     position: absolute;
     right: 0;
 }
+
+.dd-category {
+    width: 25%;
+    float: left;
+}
+
+.section-title {
+    background-color: lightgrey;
+    border-radius: 25px 25px 0 0;
+    height: 30%;
+}
+
+.new-post-block {
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+#lb-thread-category {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+#lb-thread-title {
+    margin-top: 15px;
+    margin-right: 5px;
+}
+
+.author-title {
+    padding-bottom: 15px;
+}
+
+.editor-title {
+    padding: 5px;
+    text-align: center;
+}
+
+#create-new-post-request-button {
+    font-size: 1.5rem;
+}
+
+.content-field {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.date-field {
+    display: block;
+    float: right;
+}
+
+.date-title {
+    display: block;
+    float: right;
+}
+
+.pagination li {
+    display: inline-block;
+    padding: 5px;
+}
+
+.createdate {
+    float: right;
+    padding-top: 3px;
+    margin-left: 10px;
+}

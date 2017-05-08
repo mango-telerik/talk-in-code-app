@@ -11,7 +11,8 @@ const USERNAME_CHARS = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234
     },
     USERNAME_LOCAL_STORAGE = "signed-in-user-username",
     AUTH_KEY_LOCAL_STORAGE = "signed-in-user-auth-key",
-    ID_LOCAL_STORAGE = "signed-in-user-id";
+    ID_LOCAL_STORAGE = "signed-in-user-id",
+    CURRENT_POST = "current-post-object";
 
 export {
     USERNAME_CHARS,
@@ -24,5 +25,6 @@ export {
     CREDENTIAL,
     USERNAME_LOCAL_STORAGE,
     AUTH_KEY_LOCAL_STORAGE,
-    ID_LOCAL_STORAGE
+    ID_LOCAL_STORAGE,
+    CURRENT_POST
 };
