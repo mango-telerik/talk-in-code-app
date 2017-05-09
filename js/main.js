@@ -25,6 +25,11 @@ import * as data from "data";
     // start router
     sammyApp.run('#/');
 
+    $(document).ready(function() {
+        $("#MyPostsModal").modal();
+        $("#MyCommentsModal").modal();
+    });
+
     // click login -> goes to login page
     $("body").on("click", "#login-button", () => {
         window.location.href = "#/login";
