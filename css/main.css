@@ -2,7 +2,7 @@ body {
     position: relative;
     overflow-x: hidden;
     background-color: #24292e;
-    background-image: url("../images/img.png");
+    background-image: url("https://raw.githubusercontent.com/mango-telerik/talk-in-code-app/master/images/img.png");
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;

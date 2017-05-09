@@ -27,7 +27,7 @@ import * as data from "data";
 
     // click login -> goes to login page
     $("body").on("click", "#login-button", () => {
-        window.location.href = "https://rawgit.com/mango-telerik/talk-in-code-app/master/index.html#/login";
+        window.location.href = "#/login";
     });
 
     // click logout -> logouts and goes to home page
@@ -36,7 +36,7 @@ import * as data from "data";
         data.users.signOut()
             .then((user) => {
                 toastr.success("User " + user + " signed out!", "Success!");
-                window.location.href = "https://rawgit.com/mango-telerik/talk-in-code-app/master/index.html#/";
+                window.location.href = "#/";
                 $("#logout-button").fadeOut(100, function() {
                     $("#login-button")
                         .fadeIn(400);
