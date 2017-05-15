@@ -1,8 +1,8 @@
 <a href="#/posts/{{_id}}/comment" class="add-new-comment btn btn-primary">Add comment</a>
-<h3 class="main-heading">> {{title}}</h3>
 <a href="#/home" class="home-from-single-post btn btn-info hidden-xs">Home</a>
 <a href="#/posts/{{_id}}/edit" class="edit-post btn btn-primary" id="edit-post-{{author.username}}">Edit</a>
 <button type="button" class="delete-post btn btn-danger" id="delete-post-{{author.username}}" data-toggle="modal" data-target="#myPostsModal">Delete</button>
+<h3 class="main-heading-simple">> {{title}}</h3>
 
 <!-- Modal for deleting posts -->
 <div id="myPostsModal" class="modal fade" role="dialog">
@@ -27,7 +27,7 @@
 <div id="single-post" class="panel panel-default">
     <header class="panel-heading">
         <h2 class="panel-title">Author: <strong><a href="#/home/all/{{author.username}}">{{author.username}}</a></strong></h2>
-        <h4 class="createdate hidden-xs">Created on: {{_kmd.ect}}</h4>
+        <h4 class="createdate hidden-xs">Created: <span class="date-block">{{_kmd.ect}}</span></h4>
     </header>
     <div class="panel-body">
         <main class="posts-content">
@@ -50,7 +50,7 @@
 <ul id="comments">
     {{#each comments}}
     <!-- Modal for deleting comments -->
-    <div id="myCommentsModal" class="modal fade" role="dialog">
+    <div id="myCommentsModal-{{_id}}" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -72,12 +72,12 @@
     <li>
         <div class="panel panel-{{label}} comments-panel">
             <header class="panel-heading">
-                <h4 class="createdate hidden-xs">Created: {{_kmd.ect}}</h4>
+                <h4 class="createdate hidden-xs">Created: <span class="date-block">{{_kmd.ect}}</span></h4>
                 <h2 class="panel-title">Author: <strong><a href="#/home/all/{{author.username}}">{{author.username}}</a></strong></h2>
 
                 <a href="#/comments/{{_id}}/edit" class="edit-comment btn btn-info btn-xs edit-comment-{{author.username}}">Edit</a>
                 <button type="button" class="delete-comment btn btn-danger btn-xs delete-comment-{{author.username}}" data-toggle="modal"
-                    data-target="#myCommentsModal">Delete</button>
+                    data-target="#myCommentsModal-{{_id}}">Delete</button>
             </header>
             <div class="panel-body">
                 <main class="posts-content">
@@ -88,8 +88,8 @@
                 <footer class="posts-footer">
                     <ul class="nav nav-pills" role="tablist">
                         <li role="presentation" class="add-like-container active"><button class="add-comment-like btn btn-primary" id="{{_id}}">Like <span class="badge">{{likes}}</span></button></li>
-                        <li role="presentation" class="comments-count hidden-xs"><span class="badge">{{label}}</span></li>
-                        <li role="presentation" class="category-info"><span class="btn btn-warning"><a href="#/home/{{../category}}">{{../category}}</a></span></li>
+                        <li role="presentation" class="comments-count hidden-xs pull-right"><span class="badge">{{label}}</span></li>
+                        <li role="presentation" class="category-info-small pull-right"><span class="btn btn-warning btn-xs"><a href="#/home/{{../category}}">{{../category}}</a></span></li>
                     </ul>
                 </footer>
             </div>

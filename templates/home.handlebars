@@ -1,32 +1,8 @@
 <a href="#/posts/add" class="add-new-thread btn btn-primary" id="add-new-thread">Add new post</a> {{#if currentCategory}}
-<h3 class="main-heading">[ forum posts {{currentCategory}} ]</h3>
+<h3 class="main-heading-simple">[ forum posts {{currentCategory}} ]</h3>
 {{else}}
-<h3 class="main-heading">[ forum posts ]</h3>
+<h3 class="main-heading-simple">[ forum posts ]</h3>
 {{/if}}
-
-<div class="row-paging">
-    {{#pages}}
-    <a class="button-paging" style="color:white;" href="#/?page={{.}}">Page {{.}}</a> {{/pages}}
-</div>
-<nav aria-label="Page navigation">
-    <ul class="pagination">
-        <li>
-            <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li><a href="#/posts/page1">1</a></li>
-        <li><a href="#/posts/page2">2</a></li>
-        <li><a href="#/posts/page3">3</a></li>
-        <li><a href="#/posts/page4">4</a></li>
-        <li><a href="#/posts/page5">5</a></li>
-        <li>
-            <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-    </ul>
-</nav>
 
 <ul id="all-posts-sortable">
     {{#each info}}
@@ -34,7 +10,7 @@
         <div class="panel panel-default">
             <header class="panel-heading">
                 <h2 class="panel-title"><a href="#/posts/{{_id}}"><strong>{{title}}</strong></a></h2>
-                <h4 class="createdate hidden-xs">Created: {{_kmd.ect}}</h4>
+                <h4 class="createdate hidden-xs">Created: <span class="date-block">{{_kmd.ect}}</span></h4>
             </header>
             <div class="panel-body">
                 <main class="posts-content">
@@ -48,10 +24,9 @@
                         <li role="presentation" class="add-like-container active">
                             <button class="add-post-like btn btn-primary" id="{{_id}}">Like <span class="badge">{{likes}}</span></button>
                         </li>
+
                         <li role="presentation" class="category-info"><span class="btn btn-warning"><a href="#/home/{{category}}">{{category}}</a></span></li>
                     </ul>
-                    {{!--
-                    <ul class="pagination"></ul>--}}
                 </footer>
             </div>
         </div>

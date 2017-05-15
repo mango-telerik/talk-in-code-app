@@ -44,6 +44,8 @@ var sammyApp = Sammy('#content', function() {
 
     this.get('#/comments/:postid/:commentid/delete', function(context) { loader.deleteComment(context, this.params["postid"], this.params["commentid"]); });
 
+    this.get('#/contacts', context => loader.loadContacts(context));
+
 });
 
 let loader = {
@@ -59,6 +61,18 @@ let loader = {
                     var createdate = new Date(info[i]._kmd.ect);
                     info[i]._kmd.ect = moment(createdate).format('YYYY-MM-DD HH:mm');
                 }
+
+                info = info.sort(function(a, b) {
+                    let aTime = new Date(a._kmd.ect),
+                        bTime = new Date(b._kmd.ect);
+                    if (aTime < bTime) {
+                        return 1;
+                    } else if (aTime > bTime) {
+                        return -1;
+                    } else {
+                        return 0;
+                    }
+                });
 
                 templates.get("home")
 
@@ -120,14 +134,13 @@ let loader = {
                             });
                         })
                         .then(() => {
-                            context.redirect("#/");
+                            context.redirect("#/home");
                         })
                         .catch(err => {
                             if (typeof err === "object") {
                                 err = err.responseText;
                             }
                             toastr.error(err, "Error!");
-                            context.redirect("#/login");
                         });
                 });
             });
@@ -158,7 +171,6 @@ let loader = {
                                 err = err.responseText;
                             }
                             toastr.error(err, "Error!");
-                            context.redirect("#/login");
                         });
                 });
             });
@@ -217,6 +229,17 @@ let loader = {
                 let currentPostId = currentPost._id;
                 data.comments.getPostComments(currentPostId)
                     .then(comments => {
+                        comments = comments.sort(function(a, b) {
+                            let aTime = new Date(a._kmd.ect),
+                                bTime = new Date(b._kmd.ect);
+                            if (aTime < bTime) {
+                                return -1;
+                            } else if (aTime > bTime) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        });
                         currentPost.comments = comments;
                         return currentPost;
                     })
@@ -270,7 +293,7 @@ let loader = {
                     toastr.success("You have created a new comment!", "Success!");
                     setTimeout(function() {
                         context.redirect("#/posts/" + postid);
-                        //document.location.reload(true);
+                        document.location.reload(true);
                     }, 1000);
                 }, function(err) {
                     if (typeof err === "object") {
@@ -382,7 +405,7 @@ let loader = {
     deleteComment: function(context, postid, id) {
         data.comments.deleteComment(id)
             .then(() => {
-                $("#myCommentsModal").modal('hide');
+                $("#myCommentsModal-" + id).modal('hide');
                 toastr.success("Your comment was deleted!", "Success!");
                 setTimeout(function() {
                     context.redirect("#/posts/" + postid);
@@ -394,6 +417,23 @@ let loader = {
                     err = err.responseText;
                 }
                 toastr.error(err, "Error!");
+            });
+    },
+    loadContacts(context) {
+        templates.get("contacts")
+            .then(template => {
+                context
+                    .$element()
+                    .find("#main-content")
+                    .html(template());
+            })
+            .then(() => {
+                $("body").on("click", ".submit-cintact", function(ev) {
+                    toastr.success("Thank you for sending us your message!", "Success!");
+                    setTimeout(function() {
+                        context.redirect("#/");
+                    }, 1000);
+                });
             });
     }
 };
