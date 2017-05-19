@@ -87,6 +87,9 @@ let loader = {
                         $(window).scrollTop(0);
                     })
                     .then(() => {
+                        Prism.highlightAll();
+                    })
+                    .then(() => {
                         // TODO: separate logic on different file
                         // $("#all-posts-sortable").sortable();
                         let signedUser = localStorage.getItem(USERNAME_LOCAL_STORAGE);
@@ -249,6 +252,9 @@ let loader = {
                                 .find("#main-content")
                                 .html(template(postWithComments));
                             $(window).scrollTop(0);
+                        })
+                        .then(() => {
+                            Prism.highlightAll();
                         })
                         .then(() => {
                             $(".add-new-comment").hide();
